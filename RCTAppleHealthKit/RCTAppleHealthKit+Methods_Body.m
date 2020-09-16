@@ -18,6 +18,7 @@
 {
     HKQuantityType *weightType = [HKQuantityType quantityTypeForIdentifier:HKQuantityTypeIdentifierBodyMass];
 
+    [HKStatisticsQuery
     HKUnit *unit = [RCTAppleHealthKit hkUnitFromOptions:input key:@"unit" withDefault:[HKUnit poundUnit]];
     
     [self fetchMostRecentQuantitySampleOfType:weightType

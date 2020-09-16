@@ -17,6 +17,14 @@
 @implementation RCTAppleHealthKit (Methods_Fitness)
 
 
+- (void)fitness_getActiveMinutes:(NSDictionary *)input
+                        resolver:(RCTPromiseResolveBlock)resolve
+                        rejecter:(RCTPromiseRejectBlock)reject
+{
+    resolve("X")
+}
+
+
 - (void)fitness_getStepCountOnDay:(NSDictionary *)input callback:(RCTResponseSenderBlock)callback
 {
     NSDate *date = [RCTAppleHealthKit dateFromOptions:input key:@"date" withDefault:[NSDate date]];
@@ -93,7 +101,6 @@
     
     [self setObserverForType:samplesType unit:unit];
 }
-
 
 - (void)fitness_getDailyStepSamples:(NSDictionary *)input callback:(RCTResponseSenderBlock)callback
 {
